@@ -1,5 +1,41 @@
-const net = require("net");
+//const net = require("net");
 const connect = require("./client");
+const setupInput = require("./input");
+
+
+// const setupInput = (conn) => {
+//   connection = conn;
+//   const stdin = process.stdin;
+//   stdin.setRawMode(true);
+//   stdin.setEncoding("utf8");
+//   stdin.resume();
+//   stdin.on("data", (key) => {
+//     handleUserInput(key);
+//   });
+  
+//   //handleUserInput);
+//   return stdin;
+// }; 
+
+// const handleUserInput = function(key) {
+//   if(key === '\u0003') {
+//     process.exit();
+//   }
+//   if(key === 'w') {
+//     connection.write("Move: up");
+//   }
+//   if(key === 'a') {
+//     connection.write("Move: left");
+//   }  
+//   if(key === 's') {
+//     connection.write("Move: down");
+//   } 
+//   if(key === 'd') {
+//     connection.write("Move: right");
+//   }
+//   // your code here
+// };
+
 
 // establishes a connection with the game server
 // const connect = function () {
@@ -25,4 +61,6 @@ const connect = require("./client");
 // };
 
 console.log("Connecting ...");
-connect();
+let connection = connect();
+//console.log(connection);
+setupInput(connection);
